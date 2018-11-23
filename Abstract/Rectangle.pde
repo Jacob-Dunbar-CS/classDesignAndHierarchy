@@ -14,4 +14,5 @@ class Rectangle extends Shape {
     fill(c);
     rect(x, y, width, height);
   }
+  void step() {}
 }
