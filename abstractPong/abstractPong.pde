@@ -1,17 +1,22 @@
 ArrayList <Shape> shapes = new ArrayList<Shape>();
 Paddle leftPaddle;
 Paddle rightPaddle;
+Ball ball;
+
+static boolean [] keys = new boolean[4];
 
 void setup() {
-  size(600, 500);
+  size(1000, 900);
 
   ellipseMode(RADIUS);
 
-  Ball ball = new Ball(width/2, height/2, width/35, color(#420DAB));
-  leftPaddle = new Paddle(width*3/32, height/7, width/32, height/7, color(#420DAB));
+  ball = new Ball(width/2, height/2, width/64, color(#420DAB));
+  leftPaddle = new Paddle(width*6/64, height*3/8, width/64, height/4, color(#420DAB));
+  rightPaddle = new Paddle(width*57/64, height*3/8, width/64, height/4, color(#420DAB));
 
   shapes.add(ball);
   shapes.add(leftPaddle);
+  shapes.add(rightPaddle);
 }
 
 void draw() {
@@ -19,7 +24,19 @@ void draw() {
 
   for (int i = 0; i < shapes.size(); i++) {
     shapes.get(i).draw();
-    shapes.get(i).step();
+  }
+  ball.step();
+  if (keys[0] == true) {
+    leftPaddle.stepUp();
+  }
+  if (keys[1] == true) {
+    leftPaddle.stepDown();
+  }
+  if (keys[2] == true) {
+    rightPaddle.stepUp();
+  }
+  if (keys[3] == true) {
+    rightPaddle.stepDown();
   }
 }
 
@@ -33,5 +50,34 @@ abstract class Shape {
   }
 
   abstract void draw();
-  abstract void step();
+  //abstract void step();
+}
+
+void keyPressed() {
+  if (key == 'w' || key =='W') {
+    keys[0] = true;
+  }
+  if (key == 's' || key =='S') {
+    keys[1] = true;
+  }
+  if (keyCode == UP) {
+    keys[2] = true;
+  }
+  if (keyCode == DOWN) {
+    keys[3] = true;
+  }
+}
+void keyReleased() {
+  if (key == 'w' || key =='W') {
+    keys[0] = false;
+  }
+  if (key == 's' || key =='S') {
+    keys[1] = false;
+  }
+  if (keyCode == UP) {
+    keys[2] = false;
+  }
+  if (keyCode == DOWN) {
+    keys[3] = false;
+  }
 }

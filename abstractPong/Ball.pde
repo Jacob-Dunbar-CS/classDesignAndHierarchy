@@ -30,6 +30,10 @@ class Ball extends Shape {
     if (y - radius < 0 || y +radius > height) {
       ySpeed *= -1;
     }
+    if (x - radius < leftPaddle.getX() + leftPaddle.getWidth() && y > leftPaddle.getY() && y < leftPaddle.getY() + leftPaddle.getHeight()) {
+      xSpeed *= -1;
+    }
+    
   }
   
   public float getX() {
@@ -40,8 +44,5 @@ class Ball extends Shape {
   }
   public float getRadius() {
     return radius;
-  }
-  public color getC() {
-    return c;
   }
 }
