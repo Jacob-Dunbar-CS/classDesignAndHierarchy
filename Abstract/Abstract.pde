@@ -5,7 +5,7 @@ void setup() {
 
   Rectangle rHex = new Rectangle(width/4, height/4, width/2, height/2, color(#420DAB));
   Rectangle rRGB = new Rectangle(width*3/5, height*3/5, width/5, height/5, color(random(255), random(255), random(255)));
-  Circle cRGB = new Circle(width/3, height/3, width/6, color(random(255), random(255), random(255)));
+  Circle cRGB = new Circle(width/3, height/3, width/12, color(random(255), random(255), random(255)));
 
   shapes.add(rHex);
   shapes.add(rRGB);
