@@ -1,9 +1,10 @@
-ArrayList <Shape> shapes = new ArrayList<Shape>();
+private ArrayList <Shape> shapes = new ArrayList<Shape>();
 Paddle leftPaddle;
 Paddle rightPaddle;
 Ball ball;
 
 static boolean [] keys = new boolean[4];
+static int [] scores = new int [2];
 
 void setup() {
   size(1000, 900);
