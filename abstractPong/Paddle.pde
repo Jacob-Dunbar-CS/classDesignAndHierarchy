@@ -1,4 +1,4 @@
-class Paddle extends Shape {
+final class Paddle extends Shape{
   private float paddleWidth;
   private float paddleHeight;
   private float paddleSpeed = 5;

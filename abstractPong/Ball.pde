@@ -41,10 +41,10 @@ class Ball extends Shape {
     if (y - radius < 0 || y +radius > height) {
       ySpeed *= -1;
     }
-    if (x - radius < leftPaddle.getX() + leftPaddle.getWidth() && y > leftPaddle.getY() && y < leftPaddle.getY() + leftPaddle.getHeight()) {
+    if (x + radius > leftPaddle.getX() && x - radius < leftPaddle.getX() + leftPaddle.getWidth() && y > leftPaddle.getY() && y < leftPaddle.getY() + leftPaddle.getHeight()) {
       xSpeed *= -1;
     }
-    if (x + radius > rightPaddle.getX() && y > rightPaddle.getY() && y < rightPaddle.getY() + rightPaddle.getHeight()) {
+    if (x - radius < rightPaddle.getX() + rightPaddle.getWidth() && x + radius > rightPaddle.getX() && y > rightPaddle.getY() && y < rightPaddle.getY() + rightPaddle.getHeight()) {
       xSpeed *= -1;
     }
   }
