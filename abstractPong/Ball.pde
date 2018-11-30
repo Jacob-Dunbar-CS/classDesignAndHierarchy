@@ -4,10 +4,10 @@ class Ball extends Shape {
   private float xSpeed = random(-6, 6);
   private float ySpeed = random(-6, 6);
 
-  Ball(float x, float y, float radius, color c) {
+  Ball(float x, float y) {
     super(x, y);
-    this.radius = radius;
-    this.c = c;
+    this.radius = width/64;
+    this.c = color(#420DAB);;
   }
 
   void draw() {
@@ -28,6 +28,11 @@ class Ball extends Shape {
       xSpeed *= -1;
       abstractPong.scores[1] ++;
       println(abstractPong.scores[0]+" "+abstractPong.scores[1]);
+      for (int i = 0; i < firework.length; i++) {
+        firework[i].display();
+        firework[i].createFirework();
+        firework[i].step();
+      }
       x = width/2;
       y = height/2;
     }
@@ -35,6 +40,11 @@ class Ball extends Shape {
       xSpeed *= -1;
       abstractPong.scores[0] ++;
       println(abstractPong.scores[0]+" "+abstractPong.scores[1]);
+      for (int i = 0; i < firework.length; i++) {
+        firework[i].display();
+        firework[i].createFirework();
+        firework[i].step();
+      }
       x = width/2;
       y = height/2;
     }
