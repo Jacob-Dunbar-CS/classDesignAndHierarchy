@@ -23,9 +23,14 @@ final class Firework extends Ball {
     y += ySpeed;
     ySpeed += g;
   }
-  public void display() {
+  public void draw() {
     fill(c);
     ellipse(x, y, radius, radius);
-    println(x);
+    if (ball.getX() - ball.getRadius() <= 5) {
+      createFirework();
+    }
+    if (ball.getX() + ball.getRadius() >= 995) {
+      createFirework();
+    }
   }
 }

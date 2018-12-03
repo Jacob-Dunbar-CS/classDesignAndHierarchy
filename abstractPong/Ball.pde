@@ -28,11 +28,6 @@ class Ball extends Shape {
       xSpeed *= -1;
       abstractPong.scores[1] ++;
       println(abstractPong.scores[0]+" "+abstractPong.scores[1]);
-      for (int i = 0; i < firework.length; i++) {
-        firework[i].display();
-        firework[i].createFirework();
-        firework[i].step();
-      }
       x = width/2;
       y = height/2;
     }
@@ -40,11 +35,6 @@ class Ball extends Shape {
       xSpeed *= -1;
       abstractPong.scores[0] ++;
       println(abstractPong.scores[0]+" "+abstractPong.scores[1]);
-      for (int i = 0; i < firework.length; i++) {
-        firework[i].display();
-        firework[i].createFirework();
-        firework[i].step();
-      }
       x = width/2;
       y = height/2;
     }

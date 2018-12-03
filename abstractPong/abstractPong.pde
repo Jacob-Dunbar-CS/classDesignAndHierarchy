@@ -11,6 +11,10 @@ public void setup() {
 public void draw() {
   if (gameStart == true) {
     background(255);
+    for (int i = 0; i < firework.length; i++) {
+      firework[i].draw();
+      firework[i].step();
+    }
     drawShapes();
     ball.step();
     paddleMove();
