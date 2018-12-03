@@ -22,6 +22,7 @@ final class Firework extends Ball {
     x += xSpeed;
     y += ySpeed;
     ySpeed += g;
+    }
   }
   public void draw() {
     fill(c);
