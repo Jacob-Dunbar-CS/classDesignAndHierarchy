@@ -5,8 +5,7 @@ public void createShapes() {
   firework = new Firework[15];
 
   shapes.add(ball);
-  shapes.add(Score1);
-  shapes.add(Score2);
+  shapes.add(Scoreboard);
   shapes.add(leftPaddle);
   shapes.add(rightPaddle);
   for (int i = 0; i < firework.length; i++) {
